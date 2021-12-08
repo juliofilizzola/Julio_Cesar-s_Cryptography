@@ -4,18 +4,37 @@ public class Cryptography {
   public String Encrypting(String text) throws IllegalAccessException {
     if (text.equals("")) throw new IllegalAccessException("Error");
     String formatText = text.toLowerCase();
-    char[] latters = formatText.toCharArray();
+    char[] letters = formatText.toCharArray();
 
     String encryptedText = "";
 
-    for (char latter :  latters) {
-      if (latter != ' ' && !Character.isDigit(latter)) {
-        int characterASCII = latter + 3;
+    for (char letter :  letters) {
+      if (letter != ' ' && !Character.isDigit(letter)) {
+        int characterASCII = letter + 3;
         encryptedText += (char)characterASCII;
       } else {
-        encryptedText += latter;
+        encryptedText += letter;
       }
     }
     return encryptedText;
+  }
+
+  public String Decrypt (String text) throws IllegalAccessException {
+    if (text.equals("")) throw new IllegalAccessException("Error");
+    String formatText = text.toLowerCase();
+    char[] letters = formatText.toCharArray();
+
+   String decryptText = "";
+
+    for (char letter :  letters) {
+      if (letter != ' ' && !Character.isDigit(letter)) {
+        int characterASCII = letter - 3;
+        decryptText += (char)characterASCII;
+      } else {
+        decryptText += letter;
+      }
+
+    }
+    return decryptText;
   }
 }
