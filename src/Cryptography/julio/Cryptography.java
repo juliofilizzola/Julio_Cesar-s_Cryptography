@@ -1,7 +1,9 @@
 package Cryptography.julio;
 
 public class Cryptography {
-  public String Encrypting(String text) throws IllegalAccessException {
+
+
+  public static String Encrypting(String text) throws IllegalAccessException {
     if (text.equals("")) throw new IllegalAccessException("Error");
     String formatText = text.toLowerCase();
     char[] letters = formatText.toCharArray();
@@ -19,7 +21,7 @@ public class Cryptography {
     return encryptedText;
   }
 
-  public String Decrypt (String text) throws IllegalAccessException {
+  public static String Decrypt(String text) throws IllegalAccessException {
     if (text.equals("")) throw new IllegalAccessException("Error");
     String formatText = text.toLowerCase();
     char[] letters = formatText.toCharArray();
